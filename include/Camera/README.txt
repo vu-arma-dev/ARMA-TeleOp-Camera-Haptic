@@ -1,0 +1,1 @@
+This folder is intended for code relating to camera image and video acquisition using a combination of Qt and OpenCV.
