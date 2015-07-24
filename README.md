@@ -107,7 +107,7 @@ Contribute
 Support
 -------
 
-If you are having issues, please let us know. Email [Ellie Fitzpatrick] (efitzpatrick@harpethhall.org)
+If you are having issues, please let us know. Email [Ellie Fitzpatrick] (mailto:efitzpatrick@harpethhall.org)
 
 License
 -------
