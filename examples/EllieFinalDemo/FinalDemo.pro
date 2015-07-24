@@ -29,13 +29,13 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-INCLUDEPATH += "C:\Users\long\Desktop\GIT_Repositories_W530\armaGenLib.git\include\Omega7"
-INCLUDEPATH += "C:\Users\long\Desktop\GIT_Repositories_W530\armaGenLib.git\opencv\include"
-INCLUDEPATH += "C:\Users\long\Desktop\GIT_Repositories_W530\armaGenLib.git\opencv\include\opencv2"
-INCLUDEPATH += "C:\Users\long\Desktop\GIT_Repositories_W530\armaGenLib.git\include\Camera\QCvCamera"
+INCLUDEPATH += "..\..\include\Omega7"
+INCLUDEPATH += "..\..\opencv\include"
+INCLUDEPATH += "..\..\opencv\include\opencv2"
+INCLUDEPATH += "..\..\include\Camera\QCvCamera"
 INCLUDEPATH += "C:\Dev\Eigen_3_2_1\Eigen"
 INCLUDEPATH += "C:\Program Files\Force Dimension\sdk-3.4.2\include"
-INCLUDEPATH += "C:\Users\long\Desktop\GIT_Repositories_W530\armaGenLib.git\include\Utilities\Conversions"
+INCLUDEPATH += "..\..\include\Utilities\Conversions"
 
 Release: QMAKE_LIBDIR += C:\dev\opencv\build\x86\vc10\lib
 Debug: QMAKE_LIBDIR +=  C:\dev\opencv\build\x86\vc10\lib
