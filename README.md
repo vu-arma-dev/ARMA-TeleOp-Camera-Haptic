@@ -101,10 +101,99 @@ Example Code
 
 
 ***
+Omega7 Udp
+========
+
+This project was built for use with the Omega 7 device created by Force Dimension, but can be used in any circumstance that requires forces, position, and orientation to be sent. This sends information about force, position, and orientation over udp. Has been tested with Linux and Windows.   
+
+Features
+--------
+
+- Keeps track of position, orientation, and force
+- Makes it easy to use the QUdpSocket! 
+
+
+Dependencies
+-----------
+- Qt Framework 
+- Eigen version 3.2.1
+
+Installation
+------------
+Clone the repository and use as a library in project.
+
+Getting Started
+---------------------
+
+- Create an Omega7Udp object. The constructor contains a boolean value that is whether it is a force udp or not. 
+- Create a QTimer that will be used to fetch the position, orientation, and forces from the Omega7Udp object.
+- You will need to create 2 Slots:
+    - startUdp()
+        - this connects the udp to the values inputted (with omega7object->setAddress and omega7object->setPort) to the udp socket
+        - start the timer to update the udp
+    - updateUdp()
+        - every time the timer times out this slot
+        - gets the forces from the force object or gets the position from the postion object depending on which is is recieving
+        - sends the forces or position depending on which the computer is sending
+- Connect startUdp() to a command that you have set. Make sure you have set the port and address
+- Connect updateUdp() to the QTimer’s timeout() signal
+- Let it run!
+
+
+Example Code
+--------------------
+    //Somewhere in this code you need to set the forces and position. ARMA gets this from the omega7, but you need to set it 
+    //for your current haptic device
+    MainWindow::MainWindow(QWidget *parent) :
+       QMainWindow(parent),
+       ui(new Ui::MainWindow)
+    {
+       ui->setupUi(this);
+
+       force = new Omega7Udp(1);
+       pose = new Omega7Udp(0);
+
+       udpUpdateTimer = new QTimer(this);
+  
+       QApplication::connect(ui->startButton, SIGNAL(clicked()), this, SLOT(startUdp()));
+       QApplication::connect(udpUpdateTimer, SIGNAL(timeout()), this, SLOT(updateUdp()));
+      }
+
+    MainWindow::~MainWindow()
+    {
+       delete ui;
+    }
+
+    void MainWindow::startUdp()
+    {   //logic to make sure all fields are filled in
+       force->setAddress(“192.168.1.15”);
+       force->setPortNumber(20000);
+       pose->setAddress( “192.168.1.102”);
+       pose->setPortNumber(25000);
+
+       pose->connect();
+       force->connect();
+
+       udpUpdateTimer->start(1000);
+       }
+    }
+
+    void MainWindow::updateUdp()
+    {
+       getPose();
+       pose->sendPose();
+       force->recieveForce();
+       updateForces();
+    }
+    }
+
+
+
+***
 Contribute
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
+- Issue Tracker: https://github.com/vu-arma-dev/ARMA-TeleOp-Camera-Haptic/issues
 
 Support
 -------
