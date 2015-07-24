@@ -4,7 +4,7 @@ This repository provides utilities for user interface Qt integrations in teleope
 
 ## Table of Contents
 * [QCvCamera] (https://github.com/vu-arma-dev/ARMA-TeleOp-Camera-Haptic/blob/master/README.md#qcvcamera)
-
+[TOC] 
 ****
 QCvCamera
 ========
