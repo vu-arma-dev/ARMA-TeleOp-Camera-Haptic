@@ -99,6 +99,8 @@ Example Code
        scene->addPixmap(QPixmap::fromImage((img)));
     }
 
+
+***
 Contribute
 ----------
 
@@ -107,14 +109,14 @@ Contribute
 Support
 -------
 
-If you are having issues, please let us know. Email [Ellie Fitzpatrick] (mailto:efitzpatrick@harpethhall.org)
+If you are having issues, please let us know. Email Ellie Fitzpatrick (efitzpatrick@harpethhall.org) or Long Wang (wanglong06@gmail.com)
 
 License
 -------
 
-The project is licensed under the BSD license.
+Copyright [2015] [ARMA Laboratory]
 
-***
+
 FAQ
 =====
 
