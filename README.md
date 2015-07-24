@@ -52,7 +52,7 @@ Features
 
 Dependencies
 ------------
-OpenCv: core, highgui, imgprocessing, video, feature, legacy, flann, nonfree, calibration, contribution .   
+OpenCv: core, highgui, imgprocessing, video, feature, legacy, flann, nonfree, calibration, contribution .  
   
 The libraries below *should* be in your project file of qt if you are using qt.
 
@@ -201,6 +201,30 @@ Example Code
        updateForces();
     }
     }
+
+
+
+***
+# Ellie's Final Demo
+Ellie's Final Demo is under the examples folder. It incorporates both Omega7Udp and QCvCamera. It is run with Qt. Here are the steps to make it work
+
+
+1. Install Qt (version 5.3)
+2. Install Eigen library 3.2.1 (https://bitbucket.org/eigen/eigen/downloads/)
+3. Install Force Dimension Omega7 (program & API)
+4. Install OpenCV (2.4.9 for windows) (http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.9/opencv-2.4.9.exe/download)
+
+## Troubleshooting
+1. In the “.pro” file
+   * Check the Eigen directory.
+   * Check the Force Dimension directory.
+2. Check the opencv directory. (check the version number “opencv_corexxx”, replace them accordingly)
+3. Try to run the program via the executable file 
+   * If not working because of “missing dll”, put the following “.dll” in the “exe” folder
+      * “opencv_core249.dll” & “opencv_core249d.dll”
+      * “opencv_highgui249.dll” & “opencv_highgui249d.dll”
+      * “opencv_imgproc249.dll” & “opencv_imgproc249d.dll”
+
 
 
 
